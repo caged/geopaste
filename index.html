@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>GeoPaste</title>
+  <link rel="shortcut icon" href="/img/favicon.png" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/vendor/polymaps.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/vendor/ui.tabs.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/app.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/core.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+</head>
+<body>
+  <header>
+    <div class="cnt"><h1><img src="/img/logo.png" alt="GeoPaste Logo" /></h1></div>
+  </header>
+  <section id="container">
+    <div class="cnt">
+      <section id="main">
+        <h2 class="wcontrols">Edit GeoJSON Source</h2>
+        <menu class="controls">
+          <ul class="menu">
+            <li class="source"><a href="#geojson" title="Source">Source</a></li>
+            <li class="map"><a href="#map" title="Map">Map</a></li>
+            <li class="tree"><a href="#tree" title="Tree">Tree</a></li>
+          </ul>
+        </menu>
+        <div class="panels tabs-container">
+          <textarea id="geojson" rows="30" cols="60" class="geojson panel"></textarea>
+          <div id="map" class="panel"></div>
+          <div id="tree" class="panel"</div>
+        </div>
+      </section>
+      <aside id="sbar">
+        <h2>Paste &amp; Play</h2>
+        <!-- form -->
+        <div id="form" class="box">
+          <ul class="info">
+            <li>
+              <label>Title:</label>
+              <input type="text" placeholder="Enter a Title..." />
+            </li>
+            <li>
+              <label>Password:</label>
+              <input type="password" />
+              <p class="help">Leave blank to make keep this public</p>
+            </li>
+            <li>
+              <button type="submit" class="btn">
+                <span class="g">2</span> Save</button>
+            </li>
+          </ul>
+        </div>
+        <!-- /form -->
+        <div class="box">
+          <h3 class="hd">Editing Tools</h3>
+          <ul id="tools">
+            <li><a href="#point" title="Point">Point</a></li>
+            <li><a href="#polygon" title="Polygon">Polygon</a></li>
+            <li class="selected"><a href="#multilinepoint" title="MultiPoint">MultiPoint</a></li>
+            <li><a href="#multipolygon" title="MultiPolygon">MultiPolygon</a></li>
+            <li><a href="#linestring" title="LineString">LineString</a></li>
+            <li><a href="#multilinestring" title="MultiLineString">MultiLineString</a></li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Mobile Devices</h3>
+          <p>
+            You can add features to this map from your mobile device by POSTING a JSON request to 
+            this map's unique URL.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</body>
+</html>

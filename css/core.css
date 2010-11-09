@@ -1,0 +1,388 @@
+@import url('reset.css');
+@import url('data.css');
+@import url('pictos.css');
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #fff url(/img/bg.png);
+  font-size: 12px;
+}
+
+/*------------------------------------------------------------------------------------
+  @group structure
+------------------------------------------------------------------------------------*/
+
+#main {
+  float: left;
+  width: 700px;
+  position: relative;
+}
+
+aside#sbar {
+  margin-left: 710px;
+}
+
+/* @end */
+
+header {
+  padding: 15px;
+  background: rgba(50,50,50,0.1);
+}
+
+/*------------------------------------------------------------------------------------
+  @group shared
+------------------------------------------------------------------------------------*/
+
+div.cnt {
+  width: 940px;
+  margin: 0 auto;
+}
+
+div.cnt:after {
+  content: ".";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+span.g {
+  font-family: Pictos;
+  font-weight: normal;
+}
+
+/* @end */
+
+section#container {
+  margin: 20px 0;
+}
+
+textarea, input {
+  border: 1px solid #b5d8f8;
+  border-top: 1px solid #a4c4e1;
+  border-left: 1px solid #a4c4e1;
+  -moz-box-shadow:inset 0 0 1px rgba(159, 190, 218, 1);
+  -webkit-box-shadow:inset 2px 2px 0px rgba(200, 200, 200, 0.5);
+  box-shadow:inset 0 0 2px rgba(159, 190, 218, 1);
+  background: rgba(164, 196, 225,0.1);
+}
+
+.panel {
+  border: 1px solid #b5d8f8;
+  border-top: 1px solid #a4c4e1;
+  border-left: 1px solid #a4c4e1;
+  -moz-box-shadow:inset 0 0 1px rgba(159, 190, 218, 1);
+  -webkit-box-shadow:inset 2px 2px 0px rgba(200, 200, 200, 0.5);
+  box-shadow:inset 0 0 2px rgba(159, 190, 218, 1);
+  background: rgba(164, 196, 225,0.1);
+  padding: 10px;
+  height: 500px;
+}
+
+textarea.geojson {
+  font-family: "Bitstream Vera Sans Mono", Courier, monospace;
+  font-size: 12px;
+  outline: none;
+  line-height: 2em;
+  overflow-y: auto;
+  width: 678px;
+}
+
+span.type {
+  color: purple;
+}
+
+section h2 {
+  font-size: 14px;
+  color: #333;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+/*------------------------------------------------------------------------------------
+  @group svg
+------------------------------------------------------------------------------------*/
+#map text {
+  fill: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 10px;
+}
+
+
+/* @end */
+.grid {
+  stroke: #333;
+  stroke-opacity: .4;
+  shape-rendering: crispEdges;
+}
+
+.compass {
+  z-index: 999999;
+}
+
+.compass .back {
+  fill: #20252a;
+  fill-opacity: 0.6;
+}
+
+.compass .fore {
+  stroke: none;
+  stroke-width: 0;
+}
+
+.park {
+  stroke: #333;
+  stroke-opacity: 0.5;
+  stroke-width: 1px;
+  fill-opacity: 0.2;
+  fill: #ccc;
+}
+
+.compass .direction {
+  fill: #333;
+  fill-opacity: 0.4;
+}
+
+.compass .chevron {
+  stroke: #fff;
+  stroke-opacity: 0.5;
+  stroke-width: 0;
+}
+
+.compass .zoom .chevron {
+  stroke-width: 4px;
+  stroke: #fff;
+}
+
+.compass .chevron.active {
+  
+}
+
+.compass.active .active .direction {
+  fill: #999;
+}
+
+text {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  cursor: default;
+}
+
+/*------------------------------------------------------------------------------------
+  @group menus
+------------------------------------------------------------------------------------*/
+h2.wcontrols {
+  margin-bottom: 20px;
+}
+
+menu.controls {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+menu.controls ul {
+  list-style: none;
+}
+
+menu.controls li {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+menu.controls li a {
+  display: block;
+  text-indent: -99999px;
+  background: url(/img/icons.png) 5px 5px no-repeat;
+  width: 18px;
+  height: 18px;
+  padding: 5px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+menu.controls li.map a {
+  background-position: 5px -140px;
+}
+
+menu.controls li.tree a {
+  height: 16px;
+  background-position: 5px -64px;
+}
+
+menu.controls li a:hover {
+  background-position-x: -66px;
+}
+
+/*menu.controls li.source a:hover {
+  background-position-x: -66px;
+}
+*/
+
+menu.controls li a.selected {
+  background-color: #eee;
+  border: 1px solid #ddd;
+}
+
+/* @end */
+
+/*------------------------------------------------------------------------------------
+  @group main
+------------------------------------------------------------------------------------*/
+
+
+
+/* @end */
+
+/*------------------------------------------------------------------------------------
+  @group map
+------------------------------------------------------------------------------------*/
+#map {
+  padding: 0;
+}
+
+/* @end */
+
+/*------------------------------------------------------------------------------------
+  @group sbar
+------------------------------------------------------------------------------------*/
+
+#sbar p {
+  color: #777;
+  font-size: 12px;
+  margin-bottom: 20px;
+  line-height: 1.5em;
+}
+
+#sbar .box {
+  margin: 10px 0 20px 0;
+}
+
+#sbar .box h3 {
+  margin-bottom: 10px;
+}
+
+/* @end */
+
+/*------------------------------------------------------------------------------------
+  @group tools
+------------------------------------------------------------------------------------*/
+
+ul#tools {
+  list-style: none;
+  list-style: none;
+}
+
+#tools li {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+#tools li:last-child {
+  margin-bottom: 0;
+}
+
+#tools li a {
+  display: block;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  padding: 5px;
+  border: 1px solid #dedede;
+  letter-spacing: 0.06em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+#tools li a:before {
+  font-family: Pictos;
+  content: "Q";
+  font-weight: normal;
+  color: #999;
+  margin-right: 5px;
+}
+
+#tools li a:hover {
+  color: #333;
+}
+
+#tools li.selected a {
+  background: transparent -webkit-gradient(linear, left top, left bottom, from(rgba(56, 117, 215, 1)), to(rgba(37, 93, 183, 1)));
+  background: transparent -moz-linear-gradient(top, rgba(56, 117, 215, 1), rgba(37, 93, 183, 1));
+  color: #fff;
+  border: 1px solid rgba(31, 78, 153, 1);
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+#tools li.selected a:before {
+  font-family: Pictos;
+  content: "Q";
+  font-weight: normal;
+  color: rgba(255,255,255,0.7);
+  margin-right: 5px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+ul.info {
+  list-style: none;
+  margin: 5px 0 0 0;
+}
+
+ul.info label {
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+ul.info :last-child {
+  margin-bottom: 0;
+}
+
+ul.info input[type=text],
+ul.info input[type=password] {
+  width: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #777;
+  padding: 5px;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+#sbar ul.info li p.help {
+  margin: 0;
+  color: #999;
+  font-style: italic;
+}
+
+button {
+  background: #fff -webkit-gradient(linear, left top, left bottom, from(#f1f1f1), to(#ddd));
+  background: #fff -moz-linear-gradient(top, #f1f1f1, #ddd);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 1px 1px rgba(255,255,255,0.8);
+  cursor: pointer;
+}
+
+button span.g {
+  color: #999;
+}
+
+/* @end */
